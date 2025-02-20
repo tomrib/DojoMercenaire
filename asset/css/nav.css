@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif Todhri", "Montserrat", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 15;
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 2px 5px #0000004d;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: rgb(10, 5, 5);
+    transition: color 0.3s ease; /* Ajout d'une transition pour une animation plus douce */
+}
+
+nav ul a:hover {
+    color: rgb(255, 123, 0);
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+/* Améliorations et suggestions */
+nav {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+nav .container { /* Ajout d'un conteneur pour limiter la largeur du contenu */
+    max-width: 1200px; /* Ajustez cette valeur selon vos besoins */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Distribue l'espace entre le logo et les liens */
+    align-items: center;
+    padding: 0 20px; /* Ajout d'un espacement latéral */
+}
