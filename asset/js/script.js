@@ -54,3 +54,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
 });
+const carousel = document.querySelector('.carousel');
+const slides = document.querySelector('.slides');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+let currentPosition = 0;
+let slideWidth;
+const numSlides = document.querySelectorAll('.slide').length;
+
+function updateSlideWidth() {
+    slideWidth = document.querySelector('.slide').offsetWidth;
+}
+
+updateSlideWidth();
+
+nextButton.addEventListener('click', () => {
+    currentPosition = (currentPosition + 1) % numSlides;
+    slides.style.transform = `translateX(-${currentPosition * slideWidth}px)`;
+});
+
+prevButton.addEventListener('click', () => {
+    currentPosition = (currentPosition - 1 + numSlides) % numSlides;
+    slides.style.transform = `translateX(-${currentPosition * slideWidth}px)`;
+});
+
+window.addEventListener('resize', () => {
+    updateSlideWidth();
+    slides.style.transform = `translateX(-${currentPosition * slideWidth}px)`;
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    updateSlideWidth();
+    slides.style.transform = `translateX(-${currentPosition * slideWidth}px)`;
+});
